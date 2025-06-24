@@ -1,0 +1,482 @@
+[24/6/2025, 15.31.32] INFO: Received document from user 375566131 in chat 375566131
+[24/6/2025, 15.31.32] INFO: Processing file upload for /sheet1
+[24/6/2025, 15.31.36] ERROR: Error processing file upload: ETELEGRAM: 400 Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 484
+[24/6/2025, 15.32.08] INFO: Received document from user 375566131 in chat 375566131
+[24/6/2025, 15.32.08] INFO: Processing file upload for /sheet1
+[24/6/2025, 15.32.12] ERROR: Error processing file upload: ETELEGRAM: 400 Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 484
+[24/6/2025, 15.35.46] INFO: Received document from user 375566131 in chat 375566131
+[24/6/2025, 15.35.46] INFO: Processing file upload for Sheet1
+[24/6/2025, 15.37.34] INFO: Received document from user 375566131 in chat 375566131
+[24/6/2025, 15.37.34] INFO: Processing file upload for Sheet1
+[24/6/2025, 15.38.09] INFO: Received document from user 375566131 in chat 375566131
+[24/6/2025, 15.38.09] INFO: Processing file upload for Sheet1
+[24/6/2025, 15.39.32] INFO: Received document from user 375566131 in chat 375566131
+[24/6/2025, 15.39.32] INFO: Processing file upload for Sheet1
+[24/6/2025, 15.43.57] INFO: Received document from user 375566131 in chat 375566131
+[24/6/2025, 15.43.57] INFO: Processing file upload for Sheet1
+[24/6/2025, 15.47.27] INFO: Received document from user 375566131 in chat 375566131
+[24/6/2025, 15.47.27] INFO: Processing file upload for Sheet1
+[24/6/2025, 15.55.24] INFO: Received document from user 375566131 in chat 375566131
+[24/6/2025, 15.55.25] INFO: Processing file upload for Sheet2
+[24/6/2025, 15.57.12] INFO: Received document from user 375566131 in chat 375566131
+[24/6/2025, 15.57.12] INFO: Processing file upload for Sheet2
+[24/6/2025, 15.59.29] INFO: Received document from user 375566131 in chat 375566131
+[24/6/2025, 15.59.29] INFO: Processing file upload for Sheet2
+[24/6/2025, 16.02.25] INFO: Received document from user 375566131 in chat 375566131
+[24/6/2025, 16.02.25] INFO: Processing file upload for Sheet2
+[24/6/2025, 16.09.56] INFO: Received document from user 375566131 in chat 375566131
+[24/6/2025, 16.09.56] INFO: Processing file upload for Sheet2
+[24/6/2025, 16.13.29] INFO: Received document from user 375566131 in chat 375566131
+[24/6/2025, 16.13.29] INFO: Processing file upload for Sheet2
+[24/6/2025, 16.14.21] INFO: Processing /stok command for keyword: tee aw 2 1/2
+[24/6/2025, 16.14.24] INFO: Sesi disimpan untuk 375566131_795
+[24/6/2025, 16.16.01] INFO: Sesi ditemukan untuk 375566131_795, memuat halaman 1
+[24/6/2025, 16.16.04] INFO: Sesi ditemukan untuk 375566131_795, memuat halaman 0
+[24/6/2025, 16.16.05] INFO: Sesi ditemukan untuk 375566131_795, memuat halaman 1
+[24/6/2025, 16.16.07] INFO: Sesi ditemukan untuk 375566131_795, memuat halaman 0
+[24/6/2025, 16.16.17] INFO: Sesi ditemukan untuk 375566131_795, memuat halaman 1
+[24/6/2025, 16.16.19] INFO: Sesi ditemukan untuk 375566131_795, memuat halaman 0
+[24/6/2025, 16.16.20] INFO: Sesi ditemukan untuk 375566131_795, memuat halaman 1
+[24/6/2025, 16.16.22] INFO: Sesi ditemukan untuk 375566131_795, memuat halaman 0
+[24/6/2025, 16.16.23] INFO: Sesi ditemukan untuk 375566131_795, memuat halaman 1
+[24/6/2025, 16.16.24] INFO: Sesi ditemukan untuk 375566131_795, memuat halaman 0
+[24/6/2025, 16.16.25] INFO: Sesi ditemukan untuk 375566131_795, memuat halaman 1
+[24/6/2025, 16.16.26] INFO: Sesi ditemukan untuk 375566131_795, memuat halaman 0
+[24/6/2025, 16.16.27] INFO: Sesi ditemukan untuk 375566131_795, memuat halaman 1
+[24/6/2025, 16.16.35] INFO: Sesi ditemukan untuk 375566131_795, memuat halaman 0
+[24/6/2025, 16.16.36] INFO: Sesi ditemukan untuk 375566131_795, memuat halaman 1
+[24/6/2025, 16.16.37] INFO: Sesi ditemukan untuk 375566131_795, memuat halaman 0
+[24/6/2025, 16.18.35] INFO: Received document from user 375566131 in chat 375566131
+[24/6/2025, 16.18.35] INFO: Processing file upload for Sheet2
+[24/6/2025, 16.19.01] INFO: Received document from user 375566131 in chat 375566131
+[24/6/2025, 16.19.01] INFO: Processing file upload for Sheet1
+[24/6/2025, 16.19.32] INFO: Processing /stok command for keyword: tee aw 2 1/2
+[24/6/2025, 16.19.36] INFO: Sesi disimpan untuk 375566131_802
+[24/6/2025, 16.19.44] INFO: Sesi ditemukan untuk 375566131_802, memuat halaman 1
+[24/6/2025, 16.19.46] INFO: Sesi ditemukan untuk 375566131_802, memuat halaman 0
+[24/6/2025, 16.19.47] INFO: Sesi ditemukan untuk 375566131_802, memuat halaman 1
+[24/6/2025, 16.22.27] INFO: Received document from user 375566131 in chat 375566131
+[24/6/2025, 16.22.28] INFO: Processing file upload for Sheet1
+[24/6/2025, 16.24.10] INFO: Received document from user 375566131 in chat 375566131
+[24/6/2025, 16.24.10] INFO: Processing file upload for Sheet1
+[24/6/2025, 16.24.17] ERROR: Error in animation: ETELEGRAM: 400 Bad Request: not Found
+[24/6/2025, 16.25.45] INFO: Received document from user 375566131 in chat 375566131
+[24/6/2025, 16.25.46] INFO: Processing file upload for Sheet1
+[24/6/2025, 16.25.46] INFO: Editing message to: Mengupload.. 🔄
+[24/6/2025, 16.25.47] INFO: Editing message to: Mengupload.. ✨
+[24/6/2025, 16.25.47] INFO: Editing message to: Mengupload.. 🌟
+[24/6/2025, 16.25.48] INFO: Editing message to: Mengupload.. ⏳
+[24/6/2025, 16.25.48] INFO: Editing message to: Mengupload.. 🔄
+[24/6/2025, 16.25.49] INFO: Editing message to: Mengupload.. ✨
+[24/6/2025, 16.25.49] INFO: Editing message to: Mengupload.. 🌟
+[24/6/2025, 16.25.50] INFO: Editing message to: Mengupload.. ⏳
+[24/6/2025, 16.25.50] INFO: Editing message to: Mengupload.. 🔄
+[24/6/2025, 16.25.51] INFO: Editing message to: Mengupload.. ✨
+[24/6/2025, 16.25.52] INFO: Editing message to: Mengupload.. 🌟
+[24/6/2025, 16.25.52] INFO: Editing message to: Mengupload.. ⏳
+[24/6/2025, 16.25.53] INFO: Editing message to: Mengupload.. 🔄
+[24/6/2025, 16.25.53] INFO: Editing message to: Mengupload.. ✨
+[24/6/2025, 16.25.54] INFO: Editing message to: Mengupload.. 🌟
+[24/6/2025, 16.25.54] INFO: Deleting loading message with ID 809
+[24/6/2025, 16.26.05] INFO: Received document from user 375566131 in chat 375566131
+[24/6/2025, 16.26.05] INFO: Processing file upload for Sheet2
+[24/6/2025, 16.26.06] INFO: Editing message to: Mengupload.. 🔄
+[24/6/2025, 16.26.06] INFO: Editing message to: Mengupload.. ✨
+[24/6/2025, 16.26.07] INFO: Editing message to: Mengupload.. 🌟
+[24/6/2025, 16.26.07] INFO: Editing message to: Mengupload.. ⏳
+[24/6/2025, 16.26.08] INFO: Editing message to: Mengupload.. 🔄
+[24/6/2025, 16.26.08] INFO: Editing message to: Mengupload.. ✨
+[24/6/2025, 16.26.09] INFO: Editing message to: Mengupload.. 🌟
+[24/6/2025, 16.26.09] INFO: Editing message to: Mengupload.. ⏳
+[24/6/2025, 16.26.10] INFO: Editing message to: Mengupload.. 🔄
+[24/6/2025, 16.26.10] INFO: Editing message to: Mengupload.. ✨
+[24/6/2025, 16.26.11] INFO: Editing message to: Mengupload.. 🌟
+[24/6/2025, 16.26.11] INFO: Deleting loading message with ID 812
+[24/6/2025, 16.26.12] ERROR: Error in animation: ETELEGRAM: 400 Bad Request: message to edit not found
+[24/6/2025, 16.29.18] INFO: Received document from user 375566131 in chat 375566131
+[24/6/2025, 16.29.18] INFO: Processing file upload for Sheet1
+[24/6/2025, 16.29.19] INFO: Editing message to: Mengupload.. ..
+[24/6/2025, 16.29.20] INFO: Editing message to: Mengupload.. ...
+[24/6/2025, 16.29.20] INFO: Editing message to: Mengupload.. ..
+[24/6/2025, 16.29.21] INFO: Editing message to: Mengupload.. .
+[24/6/2025, 16.29.22] INFO: Editing message to: Mengupload.. ...
+[24/6/2025, 16.29.22] INFO: Editing message to: Mengupload.. ..
+[24/6/2025, 16.29.23] INFO: Editing message to: Mengupload.. .
+[24/6/2025, 16.29.23] INFO: Editing message to: Mengupload.. ...
+[24/6/2025, 16.29.24] INFO: Editing message to: Mengupload.. ..
+[24/6/2025, 16.29.24] INFO: Editing message to: Mengupload.. .
+[24/6/2025, 16.29.25] INFO: Stopped animation interval
+[24/6/2025, 16.29.25] INFO: Deleting loading message with ID 815
+[24/6/2025, 16.29.25] ERROR: Error in animation: ETELEGRAM: 400 Bad Request: message to edit not found
+[24/6/2025, 16.31.12] INFO: Received document from user 375566131 in chat 375566131
+[24/6/2025, 16.31.12] INFO: Processing file upload for Sheet1
+[24/6/2025, 16.31.13] INFO: Editing message to: Mengupload.. 🔄
+[24/6/2025, 16.31.13] INFO: Editing message to: Mengupload.. ✨
+[24/6/2025, 16.31.14] INFO: Editing message to: Mengupload.. 🌟
+[24/6/2025, 16.31.14] INFO: Editing message to: Mengupload.. ⏳
+[24/6/2025, 16.31.15] INFO: Editing message to: Mengupload.. 🔄
+[24/6/2025, 16.31.15] INFO: Editing message to: Mengupload.. ✨
+[24/6/2025, 16.31.16] INFO: Editing message to: Mengupload.. 🌟
+[24/6/2025, 16.31.16] INFO: Editing message to: Mengupload.. ⏳
+[24/6/2025, 16.31.17] INFO: Editing message to: Mengupload.. 🔄
+[24/6/2025, 16.31.17] INFO: Editing message to: Mengupload.. ✨
+[24/6/2025, 16.31.18] INFO: Stopped animation interval
+[24/6/2025, 16.31.19] INFO: Deleting loading message with ID 818 after delay
+[24/6/2025, 16.31.46] INFO: Received document from user 375566131 in chat 375566131
+[24/6/2025, 16.31.47] INFO: Processing file upload for Sheet2
+[24/6/2025, 16.31.47] INFO: Editing message to: Mengupload.. 🔄
+[24/6/2025, 16.31.48] INFO: Editing message to: Mengupload.. ✨
+[24/6/2025, 16.31.48] INFO: Editing message to: Mengupload.. 🌟
+[24/6/2025, 16.31.49] INFO: Editing message to: Mengupload.. ⏳
+[24/6/2025, 16.31.49] INFO: Editing message to: Mengupload.. 🔄
+[24/6/2025, 16.31.50] INFO: Editing message to: Mengupload.. ✨
+[24/6/2025, 16.31.50] INFO: Editing message to: Mengupload.. 🌟
+[24/6/2025, 16.31.51] INFO: Editing message to: Mengupload.. ⏳
+[24/6/2025, 16.31.51] INFO: Editing message to: Mengupload.. 🔄
+[24/6/2025, 16.31.51] INFO: Stopped animation interval
+[24/6/2025, 16.31.52] INFO: Deleting loading message with ID 821 after delay
+[24/6/2025, 16.34.38] INFO: Received document from user 375566131 in chat 375566131
+[24/6/2025, 16.34.38] INFO: Processing file upload for Sheet1
+[24/6/2025, 16.34.39] INFO: Editing message to: Mengupload.. 🔄
+[24/6/2025, 16.34.39] INFO: Editing message to: Mengupload.. ✨
+[24/6/2025, 16.34.40] INFO: Editing message to: Mengupload.. 🌟
+[24/6/2025, 16.34.40] INFO: Editing message to: Mengupload.. ⏳
+[24/6/2025, 16.34.41] INFO: Editing message to: Mengupload.. ✨
+[24/6/2025, 16.34.42] INFO: Editing message to: Mengupload.. 🌟
+[24/6/2025, 16.34.42] INFO: Editing message to: Mengupload.. ⏳
+[24/6/2025, 16.34.43] INFO: Editing message to: Mengupload.. 🔄
+[24/6/2025, 16.34.43] INFO: Editing message to: Mengupload.. ✨
+[24/6/2025, 16.34.44] INFO: Editing message to: Mengupload.. 🌟
+[24/6/2025, 16.34.44] INFO: Editing message to: Mengupload.. ⏳
+[24/6/2025, 16.34.44] INFO: Stopped animation interval
+[24/6/2025, 16.34.45] INFO: Deleting loading message with ID 824 after delay
+[24/6/2025, 16.41.12] INFO: Received document from user 375566131 in chat 375566131
+[24/6/2025, 16.41.13] INFO: Processing file upload for Sheet1
+[24/6/2025, 16.41.13] INFO: Editing message to: Mengupload.. 🔄
+[24/6/2025, 16.41.14] INFO: Editing message to: Mengupload.. ✨
+[24/6/2025, 16.41.14] INFO: Editing message to: Mengupload.. 🌟
+[24/6/2025, 16.41.15] INFO: Editing message to: Mengupload.. ⏳
+[24/6/2025, 16.41.15] INFO: Editing message to: Mengupload.. 🔄
+[24/6/2025, 16.41.16] INFO: Editing message to: Mengupload.. ✨
+[24/6/2025, 16.41.16] INFO: Editing message to: Mengupload.. 🌟
+[24/6/2025, 16.41.17] INFO: Editing message to: Mengupload.. ⏳
+[24/6/2025, 16.41.17] INFO: Editing message to: Mengupload.. 🔄
+[24/6/2025, 16.41.18] INFO: Editing message to: Mengupload.. ✨
+[24/6/2025, 16.41.18] INFO: Editing message to: Mengupload.. 🌟
+[24/6/2025, 16.41.19] INFO: Stopped animation interval
+[24/6/2025, 16.41.20] INFO: Deleting loading message with ID 827 after delay
+[24/6/2025, 18.19.59] INFO: Processing /stok command for keyword: tee ts 2
+[24/6/2025, 18.20.02] ERROR: Error in animation: ETELEGRAM: 400 Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+[24/6/2025, 18.20.02] INFO: Sesi disimpan untuk 375566131_840
+[24/6/2025, 18.21.52] INFO: Received document from user 375566131 in chat 375566131
+[24/6/2025, 18.21.52] INFO: Processing file upload for Sheet2
+[24/6/2025, 18.21.53] INFO: Editing message to: Mengupload.. 🔄
+[24/6/2025, 18.21.53] INFO: Editing message to: Mengupload.. ✨
+[24/6/2025, 18.21.54] INFO: Editing message to: Mengupload.. 🌟
+[24/6/2025, 18.21.54] INFO: Editing message to: Mengupload.. ⏳
+[24/6/2025, 18.21.55] INFO: Editing message to: Mengupload.. 🔄
+[24/6/2025, 18.21.55] INFO: Editing message to: Mengupload.. ✨
+[24/6/2025, 18.21.56] INFO: Editing message to: Mengupload.. 🌟
+[24/6/2025, 18.21.57] INFO: Editing message to: Mengupload.. ⏳
+[24/6/2025, 18.21.57] INFO: Editing message to: Mengupload.. 🔄
+[24/6/2025, 18.21.57] INFO: Stopped animation interval
+[24/6/2025, 18.21.58] INFO: Deleting loading message with ID 842 after delay
+[24/6/2025, 18.22.05] INFO: Received document from user 375566131 in chat 375566131
+[24/6/2025, 18.22.05] INFO: Processing file upload for Sheet1
+[24/6/2025, 18.22.06] INFO: Editing message to: Mengupload.. 🔄
+[24/6/2025, 18.22.06] INFO: Editing message to: Mengupload.. ✨
+[24/6/2025, 18.22.07] INFO: Editing message to: Mengupload.. 🌟
+[24/6/2025, 18.22.07] INFO: Editing message to: Mengupload.. ⏳
+[24/6/2025, 18.22.08] INFO: Editing message to: Mengupload.. 🔄
+[24/6/2025, 18.22.08] INFO: Editing message to: Mengupload.. ✨
+[24/6/2025, 18.22.09] INFO: Editing message to: Mengupload.. 🌟
+[24/6/2025, 18.22.09] INFO: Editing message to: Mengupload.. ⏳
+[24/6/2025, 18.22.10] INFO: Editing message to: Mengupload.. 🔄
+[24/6/2025, 18.22.10] INFO: Editing message to: Mengupload.. ✨
+[24/6/2025, 18.22.10] INFO: Stopped animation interval
+[24/6/2025, 18.22.11] INFO: Deleting loading message with ID 845 after delay
+[24/6/2025, 18.22.20] INFO: Processing /stok command for keyword: tee ts 1/2
+[24/6/2025, 18.22.22] INFO: Sesi disimpan untuk 375566131_849
+[24/6/2025, 18.25.43] INFO: Processing /stok command for keyword: tee ts 1/2
+[24/6/2025, 18.25.45] ERROR: Error in animation: ETELEGRAM: 400 Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+[24/6/2025, 18.25.46] INFO: Sesi disimpan untuk 375566131_852
+[24/6/2025, 18.30.24] INFO: Processing /stok command for keyword: tee ts 1/2
+[24/6/2025, 18.30.25] ERROR: Error processing /stok: Missing required parameters: spreadsheetId, range
+[24/6/2025, 18.30.26] ERROR: Error in animation: ETELEGRAM: 400 Bad Request: message to edit not found
+[24/6/2025, 18.30.27] ERROR: Error in animation: ETELEGRAM: 400 Bad Request: message to edit not found
+[24/6/2025, 18.30.27] ERROR: Error in animation: ETELEGRAM: 400 Bad Request: message to edit not found
+[24/6/2025, 18.30.27] ERROR: Error in animation: ETELEGRAM: 400 Bad Request: message to edit not found
+[24/6/2025, 18.30.28] ERROR: Error in animation: ETELEGRAM: 400 Bad Request: message to edit not found
+[24/6/2025, 18.30.28] ERROR: Error in animation: ETELEGRAM: 400 Bad Request: message to edit not found
+[24/6/2025, 18.30.29] ERROR: Error in animation: ETELEGRAM: 400 Bad Request: message to edit not found
+[24/6/2025, 18.30.29] ERROR: Error in animation: ETELEGRAM: 400 Bad Request: message to edit not found
+[24/6/2025, 18.30.30] ERROR: Error in animation: ETELEGRAM: 400 Bad Request: message to edit not found
+[24/6/2025, 18.30.30] ERROR: Error in animation: ETELEGRAM: 400 Bad Request: message to edit not found
+[24/6/2025, 18.30.31] ERROR: Error in animation: ETELEGRAM: 400 Bad Request: message to edit not found
+[24/6/2025, 18.30.31] ERROR: Error in animation: ETELEGRAM: 400 Bad Request: message to edit not found
+[24/6/2025, 18.30.32] ERROR: Error in animation: ETELEGRAM: 400 Bad Request: message to edit not found
+[24/6/2025, 18.30.32] ERROR: Error in animation: ETELEGRAM: 400 Bad Request: message to edit not found
+[24/6/2025, 18.30.33] ERROR: Error in animation: ETELEGRAM: 400 Bad Request: message to edit not found
+[24/6/2025, 18.30.33] ERROR: Error in animation: ETELEGRAM: 400 Bad Request: message to edit not found
+[24/6/2025, 18.30.34] ERROR: Error in animation: ETELEGRAM: 400 Bad Request: message to edit not found
+[24/6/2025, 18.30.34] ERROR: Error in animation: ETELEGRAM: 400 Bad Request: message to edit not found
+[24/6/2025, 18.30.35] ERROR: Error in animation: ETELEGRAM: 400 Bad Request: message to edit not found
+[24/6/2025, 18.30.35] ERROR: Error in animation: ETELEGRAM: 400 Bad Request: message to edit not found
+[24/6/2025, 18.30.36] ERROR: Error in animation: ETELEGRAM: 400 Bad Request: message to edit not found
+[24/6/2025, 18.58.22] INFO: Processing /stok command for keyword: tee ts 1/2
+[24/6/2025, 18.58.23] ERROR: Error in animation: ETELEGRAM: 400 Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+[24/6/2025, 18.58.24] ERROR: Error in animation: ETELEGRAM: 400 Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+[24/6/2025, 18.58.25] INFO: Sesi disimpan untuk 375566131_858
+[24/6/2025, 18.58.39] INFO: Processing /stok command for keyword: tee ts 3/4
+[24/6/2025, 18.58.41] INFO: Sesi disimpan untuk 375566131_861
+[24/6/2025, 18.58.58] INFO: Processing /stok command for keyword: tee ts
+[24/6/2025, 18.59.01] INFO: Sesi disimpan untuk 375566131_865
+[24/6/2025, 18.59.06] INFO: Sesi ditemukan untuk 375566131_865, memuat halaman 1
+[24/6/2025, 18.59.09] INFO: Sesi ditemukan untuk 375566131_865, memuat halaman 2
+[24/6/2025, 18.59.12] INFO: Sesi ditemukan untuk 375566131_865, memuat halaman 3
+[24/6/2025, 18.59.15] INFO: Sesi ditemukan untuk 375566131_865, memuat halaman 2
+[24/6/2025, 18.59.16] INFO: Sesi ditemukan untuk 375566131_865, memuat halaman 1
+[24/6/2025, 18.59.17] INFO: Sesi ditemukan untuk 375566131_865, memuat halaman 0
+[24/6/2025, 18.59.32] INFO: Received document from user 375566131 in chat 375566131
+[24/6/2025, 18.59.32] INFO: Processing file upload for Sheet1
+[24/6/2025, 18.59.33] INFO: Editing message to: Mengupload.. 🔄
+[24/6/2025, 18.59.33] INFO: Editing message to: Mengupload.. ✨
+[24/6/2025, 18.59.34] INFO: Editing message to: Mengupload.. 🌟
+[24/6/2025, 18.59.34] INFO: Editing message to: Mengupload.. ⏳
+[24/6/2025, 18.59.35] INFO: Editing message to: Mengupload.. 🔄
+[24/6/2025, 18.59.35] INFO: Editing message to: Mengupload.. ✨
+[24/6/2025, 18.59.36] INFO: Editing message to: Mengupload.. 🌟
+[24/6/2025, 18.59.36] INFO: Editing message to: Mengupload.. ⏳
+[24/6/2025, 18.59.37] INFO: Editing message to: Mengupload.. 🔄
+[24/6/2025, 18.59.37] INFO: Editing message to: Mengupload.. ✨
+[24/6/2025, 18.59.37] INFO: Stopped animation interval
+[24/6/2025, 18.59.38] INFO: Attempting to delete loading message with ID 867
+[24/6/2025, 18.59.39] INFO: Deleted loading message with ID 867
+[24/6/2025, 18.59.46] INFO: Received document from user 375566131 in chat 375566131
+[24/6/2025, 18.59.47] INFO: Processing file upload for Sheet2
+[24/6/2025, 18.59.47] INFO: Editing message to: Mengupload.. 🔄
+[24/6/2025, 18.59.48] INFO: Editing message to: Mengupload.. ✨
+[24/6/2025, 18.59.48] INFO: Editing message to: Mengupload.. 🌟
+[24/6/2025, 18.59.49] INFO: Editing message to: Mengupload.. ⏳
+[24/6/2025, 18.59.49] INFO: Editing message to: Mengupload.. 🔄
+[24/6/2025, 18.59.50] INFO: Editing message to: Mengupload.. ✨
+[24/6/2025, 18.59.50] INFO: Editing message to: Mengupload.. 🌟
+[24/6/2025, 18.59.51] INFO: Editing message to: Mengupload.. ⏳
+[24/6/2025, 18.59.51] INFO: Stopped animation interval
+[24/6/2025, 18.59.52] INFO: Attempting to delete loading message with ID 870
+[24/6/2025, 18.59.52] INFO: Deleted loading message with ID 870
+[24/6/2025, 19.01.06] INFO: Sent help message to 375566131
+[24/6/2025, 19.04.02] INFO: Processing /stok command for keyword: tee ts
+[24/6/2025, 19.04.05] INFO: Sesi disimpan untuk 375566131_877
+[24/6/2025, 19.05.35] INFO: Processing /stok command for keyword: tee ts
+[24/6/2025, 19.05.38] INFO: Sesi disimpan untuk 375566131_880
+[24/6/2025, 19.05.42] INFO: Sesi ditemukan untuk 375566131_880, memuat halaman 1
+[24/6/2025, 19.05.44] INFO: Sesi ditemukan untuk 375566131_880, memuat halaman 2
+[24/6/2025, 19.05.53] INFO: Sesi ditemukan untuk 375566131_880, memuat halaman 3
+[24/6/2025, 19.05.55] INFO: Sesi ditemukan untuk 375566131_880, memuat halaman 2
+[24/6/2025, 19.05.56] INFO: Sesi ditemukan untuk 375566131_880, memuat halaman 1
+[24/6/2025, 19.05.58] INFO: Sesi ditemukan untuk 375566131_880, memuat halaman 0
+[24/6/2025, 19.06.00] INFO: Sesi ditemukan untuk 375566131_880, memuat halaman 1
+[24/6/2025, 19.06.02] INFO: Sesi ditemukan untuk 375566131_880, memuat halaman 2
+[24/6/2025, 19.06.09] INFO: Sesi ditemukan untuk 375566131_880, memuat halaman 3
+[24/6/2025, 19.06.12] INFO: Sesi ditemukan untuk 375566131_880, memuat halaman 2
+[24/6/2025, 19.06.13] INFO: Sesi ditemukan untuk 375566131_880, memuat halaman 1
+[24/6/2025, 19.06.14] INFO: Sesi ditemukan untuk 375566131_880, memuat halaman 0
+[24/6/2025, 19.06.16] INFO: Sesi ditemukan untuk 375566131_880, memuat halaman 1
+[24/6/2025, 19.06.18] INFO: Sesi ditemukan untuk 375566131_880, memuat halaman 2
+[24/6/2025, 19.06.19] INFO: Sesi ditemukan untuk 375566131_880, memuat halaman 3
+[24/6/2025, 19.06.39] INFO: Processing /stok command for keyword: mizu d 3
+[24/6/2025, 19.06.41] INFO: Sesi disimpan untuk 375566131_883
+[24/6/2025, 19.10.17] INFO: Sent welcome message to 375566131
+[24/6/2025, 19.10.38] INFO: Sent help message to 375566131
+[24/6/2025, 19.11.13] INFO: Processing /s command for keyword: tee ts 3/4
+[24/6/2025, 19.11.14] ERROR: Error in animation: ETELEGRAM: 400 Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+[24/6/2025, 19.11.15] ERROR: Error in animation: ETELEGRAM: 400 Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+[24/6/2025, 19.11.16] INFO: Sesi disimpan untuk 375566131_890
+[24/6/2025, 19.11.59] INFO: Processing /s command for keyword: tee ts 3/4
+[24/6/2025, 19.12.02] INFO: Sesi disimpan untuk 375566131_893
+[24/6/2025, 19.13.30] INFO: Sent welcome message to 375566131
+[24/6/2025, 19.16.38] INFO: Sent welcome message to 375566131
+[24/6/2025, 19.16.44] INFO: Processing /s command for keyword: tee aw 1/2
+[24/6/2025, 19.16.47] INFO: Sesi disimpan untuk 375566131_5
+[24/6/2025, 19.21.26] INFO: Sent welcome message to 375566131
+[24/6/2025, 19.21.44] INFO: Processing /s command for keyword: tee ts 1/2
+[24/6/2025, 19.21.47] INFO: Sesi disimpan untuk 375566131_11
+[24/6/2025, 19.24.34] ERROR: Error loading verified users: Unexpected end of JSON input
+[24/6/2025, 19.24.36] INFO: Sent verification prompt to 375566131
+[24/6/2025, 19.24.41] INFO: User 375566131 verified successfully with name yanto
+[24/6/2025, 19.26.10] INFO: Processing /s command for keyword: tee ts 1/2
+[24/6/2025, 19.26.12] ERROR: Error in animation: ETELEGRAM: 400 Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+[24/6/2025, 19.26.14] ERROR: Error processing /s: searchSessions is not defined
+[24/6/2025, 19.26.16] ERROR: Retry failed after 3 attempts: ETELEGRAM: 400 Bad Request: message to delete not found
+[24/6/2025, 19.26.36] INFO: Processing /s command for keyword: tee ts 1/2
+[24/6/2025, 19.26.39] ERROR: Error processing /s: searchSessions is not defined
+[24/6/2025, 19.26.41] ERROR: Retry failed after 3 attempts: ETELEGRAM: 400 Bad Request: message to delete not found
+[24/6/2025, 19.26.52] INFO: Sent welcome message to 375566131
+[24/6/2025, 19.26.54] INFO: Sent welcome message to 375566131
+[24/6/2025, 19.28.22] INFO: Processing /s command for keyword: tee ts 1/2
+[24/6/2025, 19.28.24] ERROR: Error in animation: ETELEGRAM: 400 Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+[24/6/2025, 19.28.25] ERROR: Error processing /s: searchSessions is not defined
+[24/6/2025, 19.28.28] ERROR: Retry failed after 3 attempts: ETELEGRAM: 400 Bad Request: message to delete not found
+[24/6/2025, 19.31.18] INFO: Sent welcome message to 375566131
+[24/6/2025, 19.37.28] INFO: Sent welcome message to 375566131
+[24/6/2025, 19.39.19] INFO: Sent welcome message to 375566131
+[24/6/2025, 19.39.19] INFO: Sent welcome message to 375566131
+[24/6/2025, 19.40.07] ERROR: Error loading verified users: Unexpected end of JSON input
+[24/6/2025, 19.40.09] INFO: Sent verification prompt to user 5461460445
+[24/6/2025, 19.40.09] INFO: Sent verification prompt to user 5461460445
+[24/6/2025, 19.40.14] INFO: Sent verification prompt to user 5461460445
+[24/6/2025, 19.40.14] INFO: Sent verification prompt to user 5461460445
+[24/6/2025, 19.41.25] ERROR: Error loading verified users: Unexpected end of JSON input
+[24/6/2025, 19.41.26] INFO: Sent verification prompt to user 5461460445
+[24/6/2025, 19.44.12] INFO: Sent welcome message to 375566131
+[24/6/2025, 19.49.21] INFO: Sent verification prompt to user 5461460445
+[24/6/2025, 19.49.32] INFO: Sent welcome message to 375566131
+[24/6/2025, 19.51.03] INFO: Sent welcome message to 375566131
+[24/6/2025, 19.51.06] INFO: Sent verification prompt to user 5461460445
+[24/6/2025, 19.51.09] INFO: User 5461460445 verified successfully with name bandi
+[24/6/2025, 19.51.14] INFO: Sent welcome message to 5461460445
+[24/6/2025, 19.51.40] INFO: Sent welcome message to 7145547072
+[24/6/2025, 19.53.17] INFO: Sent welcome message to 5461460445
+[24/6/2025, 19.53.20] INFO: Sent welcome message to 7145547072
+[24/6/2025, 19.53.59] INFO: Sent welcome message to 7292301705
+[24/6/2025, 19.54.25] INFO: Processing /s command for keyword: tee ts 1/2
+[24/6/2025, 19.54.26] ERROR: Error in animation: ETELEGRAM: 400 Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+[24/6/2025, 19.54.28] ERROR: Error processing /s: searchSessions is not defined
+[24/6/2025, 19.54.30] ERROR: Retry failed after 3 attempts: ETELEGRAM: 400 Bad Request: message to delete not found
+[24/6/2025, 19.56.51] INFO: Sent verification prompt to user 7145547072
+[24/6/2025, 19.56.54] INFO: Sent verification prompt to user 7292301705
+[24/6/2025, 19.56.59] INFO: User 7292301705 verified successfully with name bandi
+[24/6/2025, 19.57.06] INFO: Failed verification attempt for user 7145547072 with name sudni
+[24/6/2025, 19.57.10] INFO: Sent verification prompt to user 7145547072
+[24/6/2025, 19.57.11] INFO: Failed verification attempt for user 7145547072 with name /start
+[24/6/2025, 19.57.23] INFO: Failed verification attempt for user 7145547072 with name gogon
+[24/6/2025, 19.57.25] INFO: Sent verification prompt to user 7145547072
+[24/6/2025, 19.57.26] INFO: Failed verification attempt for user 7145547072 with name /start
+[24/6/2025, 19.57.34] INFO: Sent welcome message to 375566131
+[24/6/2025, 19.57.38] INFO: Sent welcome message to 7292301705
+[24/6/2025, 19.59.11] INFO: Processing /s command for keyword: tee ts 1/2
+[24/6/2025, 19.59.13] ERROR: Error processing /s: searchSessions is not defined
+[24/6/2025, 19.59.15] ERROR: Retry failed after 3 attempts: ETELEGRAM: 400 Bad Request: message to delete not found
+[24/6/2025, 20.00.07] INFO: Sent verification prompt to user 7145547072
+[24/6/2025, 20.00.10] INFO: Failed verification attempt for user 7145547072 with name sd
+[24/6/2025, 20.00.13] INFO: Sent verification prompt to user 7145547072
+[24/6/2025, 20.00.32] INFO: Sent welcome message to 5461460445
+[24/6/2025, 20.00.37] INFO: Sent verification prompt to user 7145547072
+[24/6/2025, 20.00.37] INFO: Failed verification attempt for user 7145547072 with name /s tee tes 1/2
+[24/6/2025, 20.00.47] INFO: Sent verification prompt to user 7145547072
+[24/6/2025, 20.00.48] INFO: Failed verification attempt for user 7145547072 with name /s tee aw 1/2
+[24/6/2025, 20.03.10] INFO: Processing /s command for keyword: tee ts 1/2
+[24/6/2025, 20.03.12] ERROR: Error in animation: ETELEGRAM: 400 Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+[24/6/2025, 20.03.12] ERROR: Error processing /s: searchSessions is not defined
+[24/6/2025, 20.03.15] ERROR: Retry failed after 3 attempts: ETELEGRAM: 400 Bad Request: message to delete not found
+[24/6/2025, 20.03.51] INFO: Processing /s command for keyword: tee ts 1/2
+[24/6/2025, 20.03.54] ERROR: Error processing /s: searchSessions is not defined
+[24/6/2025, 20.03.57] ERROR: Retry failed after 3 attempts: ETELEGRAM: 400 Bad Request: message to delete not found
+[24/6/2025, 20.04.10] INFO: Processing /s command for keyword: tee ts 1/2
+[24/6/2025, 20.04.11] ERROR: Error in animation: ETELEGRAM: 400 Bad Request: message is not modified: specified new message content and reply markup are exactly the same as a current content and reply markup of the message
+[24/6/2025, 20.04.13] ERROR: Error processing /s: searchSessions is not defined
+[24/6/2025, 20.04.15] ERROR: Retry failed after 3 attempts: ETELEGRAM: 400 Bad Request: message to delete not found
+[24/6/2025, 20.05.49] INFO: Processing /s command for keyword: tee ts 1/2
+[24/6/2025, 20.05.51] INFO: Sesi disimpan untuk 7292301705_161
+[24/6/2025, 20.06.15] INFO: Sent verification prompt to user 7145547072
+[24/6/2025, 20.06.27] INFO: Sent welcome message to 375566131
+[24/6/2025, 20.06.33] INFO: Processing /s command for keyword: tee ts 1/2
+[24/6/2025, 20.06.35] INFO: Sesi disimpan untuk 375566131_169
+[24/6/2025, 20.06.44] INFO: Processing /s command for keyword: tee ts
+[24/6/2025, 20.06.46] INFO: Sesi disimpan untuk 375566131_172
+[24/6/2025, 20.06.54] INFO: Sesi ditemukan untuk 375566131_172, memuat halaman 1
+[24/6/2025, 20.06.57] INFO: Sesi ditemukan untuk 375566131_172, memuat halaman 2
+[24/6/2025, 20.07.01] INFO: Sesi ditemukan untuk 375566131_172, memuat halaman 3
+[24/6/2025, 20.07.04] INFO: Sesi ditemukan untuk 375566131_172, memuat halaman 2
+[24/6/2025, 20.07.09] INFO: Sesi ditemukan untuk 375566131_172, memuat halaman 3
+[24/6/2025, 20.07.11] INFO: Sesi ditemukan untuk 375566131_172, memuat halaman 2
+[24/6/2025, 20.07.13] INFO: Sesi ditemukan untuk 375566131_172, memuat halaman 1
+[24/6/2025, 20.07.14] INFO: Sesi ditemukan untuk 375566131_172, memuat halaman 0
+[24/6/2025, 20.07.15] INFO: Sesi ditemukan untuk 375566131_172, memuat halaman 1
+[24/6/2025, 20.07.17] INFO: Sesi ditemukan untuk 375566131_172, memuat halaman 2
+[24/6/2025, 20.07.18] INFO: Sesi ditemukan untuk 375566131_172, memuat halaman 3
+[24/6/2025, 20.07.36] INFO: Sent verification prompt to user 5461460445
+[24/6/2025, 20.07.42] INFO: User 5461460445 verified successfully with name bandi
+[24/6/2025, 20.07.49] INFO: Processing /s command for keyword: tee ts 1/2
+[24/6/2025, 20.07.51] INFO: Sesi disimpan untuk 5461460445_179
+[24/6/2025, 20.08.00] INFO: Received document from user 5461460445 in chat 5461460445
+[24/6/2025, 20.08.20] INFO: Processing /s command for keyword: tee aw 1/2
+[24/6/2025, 20.08.22] INFO: Sesi disimpan untuk 7145547072_184
+[24/6/2025, 20.11.24] INFO: Processing /s command for keyword: tee ts
+[24/6/2025, 20.11.27] INFO: Sesi disimpan untuk 375566131_187
+[24/6/2025, 20.11.28] INFO: Sesi ditemukan untuk 375566131_187, memuat halaman 1
+[24/6/2025, 20.11.35] INFO: Processing /s command for keyword: tee aw 1/2
+[24/6/2025, 20.11.37] INFO: Sesi disimpan untuk 7145547072_190
+[24/6/2025, 20.11.51] INFO: Processing /s command for keyword: tee aw 1/2
+[24/6/2025, 20.11.53] INFO: Sesi disimpan untuk 7145547072_193
+[24/6/2025, 20.11.54] INFO: Sent welcome message to 7145547072
+[24/6/2025, 20.14.44] INFO: Sent verification prompt to user 7292301705
+[24/6/2025, 20.14.47] INFO: Sent verification prompt to user 7292301705 for command /s
+[24/6/2025, 20.14.48] INFO: Failed verification attempt for user 7292301705 with name /s tee ts 1/2
+[24/6/2025, 20.14.53] INFO: Failed verification attempt for user 7292301705 with name duni
+[24/6/2025, 20.14.55] INFO: Sent verification prompt to user 7292301705 for command /s
+[24/6/2025, 20.14.55] INFO: Failed verification attempt for user 7292301705 with name /s tee ts 1/2
+[24/6/2025, 20.14.57] INFO: Sent verification prompt to user 7292301705
+[24/6/2025, 20.14.57] INFO: Failed verification attempt for user 7292301705 with name /start
+[24/6/2025, 20.15.04] INFO: Sent welcome message to 375566131
+[24/6/2025, 20.15.09] INFO: Sent verification prompt to user 7292301705 for command /s
+[24/6/2025, 20.15.09] INFO: Failed verification attempt for user 7292301705 with name /s tee ts 1/2
+[24/6/2025, 20.15.16] INFO: Processing /s command for keyword: tee ts 1/2
+[24/6/2025, 20.15.19] INFO: Sesi disimpan untuk 375566131_216
+[24/6/2025, 20.15.23] INFO: Sent verification prompt to user 7292301705 for command /s
+[24/6/2025, 20.15.24] INFO: Failed verification attempt for user 7292301705 with name /s tee ts 1/2
+[24/6/2025, 20.15.30] INFO: Sent verification prompt to user 5461460445
+[24/6/2025, 20.15.34] INFO: User 5461460445 verified successfully with name indra
+[24/6/2025, 20.15.52] INFO: Sent verification prompt to user 7145547072
+[24/6/2025, 20.15.58] INFO: Failed verification attempt for user 7145547072 with name duuji
+[24/6/2025, 20.16.04] INFO: Failed verification attempt for user 7145547072 with name vertikal
+[24/6/2025, 20.16.08] INFO: Sent verification prompt to user 7145547072
+[24/6/2025, 20.16.08] INFO: Failed verification attempt for user 7145547072 with name /start
+[24/6/2025, 20.16.11] INFO: Failed verification attempt for user 7145547072 with name dunia
+[24/6/2025, 20.16.15] INFO: Sent welcome message to 375566131
+[24/6/2025, 20.16.24] INFO: Processing /s command for keyword: tee aw 1/2
+[24/6/2025, 20.16.26] INFO: Sesi disimpan untuk 375566131_239
+[24/6/2025, 20.16.44] INFO: Received document from user 5461460445 in chat 5461460445
+[24/6/2025, 20.17.00] INFO: Received document from user 375566131 in chat 375566131
+[24/6/2025, 20.17.01] INFO: Processing file upload for Sheet1
+[24/6/2025, 20.17.03] INFO: Editing message to: Mengupload.. ✨
+[24/6/2025, 20.17.05] INFO: Editing message to: Mengupload.. ⏳
+[24/6/2025, 20.17.06] INFO: Stopped animation interval
+[24/6/2025, 20.17.07] INFO: Attempting to delete loading message with ID 243
+[24/6/2025, 20.17.16] INFO: Received document from user 375566131 in chat 375566131
+[24/6/2025, 20.17.16] INFO: Processing file upload for Sheet2
+[24/6/2025, 20.17.18] INFO: Editing message to: Mengupload.. ✨
+[24/6/2025, 20.17.20] INFO: Editing message to: Mengupload.. ⏳
+[24/6/2025, 20.17.21] INFO: Stopped animation interval
+[24/6/2025, 20.17.22] INFO: Attempting to delete loading message with ID 246
+[24/6/2025, 20.17.29] INFO: Processing /s command for keyword: tee ts 1/2
+[24/6/2025, 20.17.30] INFO: Sesi disimpan untuk 375566131_250
+[24/6/2025, 20.18.45] INFO: Sent verification prompt to user 7145547072 for command /s
+[24/6/2025, 20.18.45] INFO: Failed verification attempt for user 7145547072 with name /s tee ts 1/2
+[24/6/2025, 20.18.49] INFO: Sent verification prompt to user 7145547072 for command /s
+[24/6/2025, 20.18.50] INFO: Failed verification attempt for user 7145547072 with name /s tee aw
+[24/6/2025, 20.18.55] INFO: Processing /s command for keyword: tee aw
+[24/6/2025, 20.18.58] INFO: Sesi disimpan untuk 375566131_259
+[24/6/2025, 20.19.01] INFO: Sesi ditemukan untuk 375566131_259, memuat halaman 1
+[24/6/2025, 20.19.03] INFO: Sesi ditemukan untuk 375566131_259, memuat halaman 2
+[24/6/2025, 20.19.05] INFO: Sesi ditemukan untuk 375566131_259, memuat halaman 3
+[24/6/2025, 20.19.16] INFO: Sesi ditemukan untuk 375566131_259, memuat halaman 4
+[24/6/2025, 20.19.18] INFO: Sesi ditemukan untuk 375566131_259, memuat halaman 5
+[24/6/2025, 20.19.19] INFO: Sesi ditemukan untuk 375566131_259, memuat halaman 6
+[24/6/2025, 20.19.20] INFO: Sesi ditemukan untuk 375566131_259, memuat halaman 7
+[24/6/2025, 20.19.25] INFO: Sesi ditemukan untuk 375566131_259, memuat halaman 8
+[24/6/2025, 20.19.26] INFO: Sesi ditemukan untuk 375566131_259, memuat halaman 9
+[24/6/2025, 20.19.27] INFO: Sesi ditemukan untuk 375566131_259, memuat halaman 10
+[24/6/2025, 20.19.29] INFO: Sesi ditemukan untuk 375566131_259, memuat halaman 11
+[24/6/2025, 20.19.30] INFO: Sesi ditemukan untuk 375566131_259, memuat halaman 12
+[24/6/2025, 20.19.32] INFO: Sesi ditemukan untuk 375566131_259, memuat halaman 13
+[24/6/2025, 20.19.33] INFO: Sesi ditemukan untuk 375566131_259, memuat halaman 12
+[24/6/2025, 20.19.45] INFO: Sesi ditemukan untuk 375566131_259, memuat halaman 11
+[24/6/2025, 20.19.47] INFO: Sesi ditemukan untuk 375566131_259, memuat halaman 10
+[24/6/2025, 20.19.48] INFO: Sesi ditemukan untuk 375566131_259, memuat halaman 9
+[24/6/2025, 20.19.50] INFO: Sesi ditemukan untuk 375566131_259, memuat halaman 8
+[24/6/2025, 20.20.01] INFO: Processing /s command for keyword: mizu aw 1/2
+[24/6/2025, 20.20.03] INFO: Sesi disimpan untuk 375566131_262
+[24/6/2025, 20.20.11] INFO: Processing /s command for keyword: tee aw 2 1/2 x
+[24/6/2025, 20.20.13] INFO: Sesi disimpan untuk 375566131_265

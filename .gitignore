@@ -1,0 +1,28 @@
+# Ignore Node.js build artifacts
+node_modules/
+dist/
+build/
+
+# Ignore log files
+*.log
+
+# Ignore environment variables
+.env
+*.env
+
+# Ignore sensitive files in root
+credentials.json
+verified-users.json
+
+# Ignore IDE/config files (optional, sesuaikan dengan IDE kamu)
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore macOS system files (jika pakai Mac)
+.DS_Store
+
+# Ignore temporary files
+*.tmp
+*.temp
