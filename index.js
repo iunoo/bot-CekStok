@@ -9,14 +9,15 @@ const updateSheetFromFile = require('./utils/updateSheetFromFile');
 const updateSheet2FromFile = require('./utils/updateSheet2FromFile');
 require('dotenv').config();
 
-// Fungsi log ke file
-const logFile = 'bot-log.txt';
-function log(message, level = 'INFO') {
+// Fungsi log ke file (diekspor)
+const log = (message, level = 'INFO') => {
   const timestamp = new Date().toLocaleString('id-ID', { timeZone: 'Asia/Jakarta' });
   const logEntry = `[${timestamp}] ${level}: ${message}\n`;
-  fs.appendFileSync(logFile, logEntry, 'utf8');
+  fs.appendFileSync('bot-log.txt', logEntry, 'utf8');
   console.log(logEntry.trim());
-}
+};
+
+module.exports = { log }; // Ekspor fungsi log
 
 // Fungsi retry untuk operasi async
 async function retry(fn, maxAttempts = 3, delay = 500) {
@@ -51,13 +52,21 @@ const loadingEmojis = ['⏳', '🔄', '✨', '🌟'];
 const awaitingVerification = {};
 const lastCredential = {};
 
+// Fungsi bantu ekstrak nama dasar dan angka
+function extractBaseNameAndNumber(name) {
+  const baseMatch = name.replace(/@\s*\d+\s*/g, '').replace(/\s*\(Pcs\)/g, ''); // Hapus @ dan (Pcs)
+  const numMatch = name.match(/(\d+(?:\s*\d+\/*\d*))/); // Ekstrak angka seperti 1, 1 1/2, 10
+  const num = numMatch ? parseFloat(numMatch[1].replace(/\s/g, '').replace('/', '.')) || 0 : Infinity;
+  return { baseName: baseMatch.trim(), number: num };
+}
+
 bot.on('message', async (msg) => {
   const chatId = msg.chat.id;
   const userId = msg.from.id;
   const text = msg.text?.toLowerCase().trim();
 
   if (awaitingVerification[userId]) {
-    lastCredential[userId] = text; // Simpan kredensial terakhir
+    lastCredential[userId] = text;
     if (verification.verifyUser(userId, text, verificationNames, allowedUserIds)) {
       delete awaitingVerification[userId];
       delete lastCredential[userId];
@@ -65,7 +74,7 @@ bot.on('message', async (msg) => {
 👋 Selamat Datang di Bot Cek Stok ${text.charAt(0).toUpperCase() + text.slice(1)}!  
 *📌 Apa yang Bisa Dilakukan:*  
   - Cek stok barang cepat dengan */s <nama barang>*  
-    (Contoh: /s jaya abu)  
+    (Contoh: /s mizu d)  
   - Butuh panduan? Ketik */bantuan*  
 *📥 Untuk Admin:*  
   - Update data via file Excel dengan caption:  
@@ -76,6 +85,7 @@ bot.on('message', async (msg) => {
       await bot.sendMessage(chatId, welcomeMessage, { parse_mode: 'Markdown' });
       log(`User ${userId} verified successfully with name ${text}`);
     } else {
+      delete awaitingVerification[userId];
       await bot.sendMessage(chatId, '⚠️ Kredensial tidak valid. Coba lagi.', { parse_mode: 'Markdown' });
       log(`Failed verification attempt for user ${userId} with name ${text}`);
     }
@@ -88,20 +98,17 @@ bot.on('document', async (msg) => {
   const userId = msg.from.id;
   const text = (msg.caption || '').toLowerCase().trim();
 
-  // Cek apakah user adalah admin
   if (!allowedUserIds.includes(userId)) {
     await bot.sendMessage(chatId, '⚠️ Anda bukan admin. Hanya admin yang boleh mengunggah file.', { parse_mode: 'Markdown' });
     return;
   }
 
-  // Validasi caption
   if (!text || (!text.startsWith('/sheet1') && !text.startsWith('/sheet2'))) {
     log(`Invalid caption: "${text}"`, 'WARN');
     await bot.sendMessage(chatId, '⚠️ Gunakan /sheet1 atau /sheet2 sebagai caption saat mengunggah file.', { parse_mode: 'Markdown' });
     return;
   }
 
-  // Kirim pesan awal dengan animasi
   let loadingMessage;
   let animationInterval;
   try {
@@ -148,7 +155,6 @@ bot.on('document', async (msg) => {
     }
   }
 
-  // Hentikan animasi dan hapus pesan dengan retry
   if (animationInterval) {
     clearInterval(animationInterval);
     log(`Stopped animation interval`, 'INFO');
@@ -160,20 +166,19 @@ bot.on('document', async (msg) => {
         await retry(() => bot.deleteMessage(chatId, loadingMessage.message_id)).catch(err => {
           log(`Failed to delete message: ${err.message}`, 'WARN');
         });
-      }, 1000);
+      }, 1500);
     } catch (err) {
       log(`Error deleting loading message: ${err.message}`, 'ERROR');
     }
   }
 });
 
-bot.onText(/\/s (.+)/i, async (msg, match) => {
+bot.onText(/\/s(?:\s+(.+))?/, async (msg, match) => {
   const chatId = msg.chat.id;
   const userId = msg.from.id;
-  const keyword = match[1].trim();
+  const keyword = match[1] ? match[1].trim() : '';
   let processingMessage;
 
-  // Blokir akses sampe verifikasi (kecuali admin)
   if (!verification.isVerified(userId) && !allowedUserIds.includes(userId)) {
     awaitingVerification[userId] = true;
     const promptMessage = `
@@ -187,7 +192,7 @@ bot.onText(/\/s (.+)/i, async (msg, match) => {
   }
 
   try {
-    log(`Processing /s command for keyword: ${keyword}`);
+    log(`Processing /s command for keyword: ${keyword || '(none)'}`);
     processingMessage = await bot.sendMessage(chatId, 'Memproses... ⏳', { parse_mode: 'Markdown' });
     let emojiIndex = 0;
     let lastText = 'Memproses... ⏳';
@@ -198,12 +203,14 @@ bot.onText(/\/s (.+)/i, async (msg, match) => {
         const newText = `Memproses... ${loadingEmojis[emojiIndex]}`;
         if (newText !== lastText && emojiIndex % 2 === 0) {
           log(`Editing message to: ${newText}`, 'INFO');
-          await bot.editMessageText(newText, {
-            chat_id: chatId,
-            message_id: processingMessage.message_id,
-            parse_mode: 'Markdown'
-          }).catch(err => log(`Animation edit failed: ${err.message}`, 'WARN'));
-          lastText = newText;
+          if (processingMessage) {
+            await bot.editMessageText(newText, {
+              chat_id: chatId,
+              message_id: processingMessage.message_id,
+              parse_mode: 'Markdown'
+            }).catch(err => log(`Animation edit failed: ${err.message}`, 'WARN'));
+            lastText = newText;
+          }
         }
       } catch (err) {
         log(`Error in animation: ${err.message}`, 'ERROR');
@@ -211,25 +218,55 @@ bot.onText(/\/s (.+)/i, async (msg, match) => {
     }, 1000);
 
     const { stokData, pesananData, updatedAtStok, updatedAtPesanan } = await getSheetsData();
+    log(`Stok data received: ${stokData ? stokData.length : 'undefined'} items`, 'DEBUG');
+    log(`Pesanan data received: ${pesananData ? pesananData.length : 'undefined'} items`, 'DEBUG');
     const calculated = await calculateReadyStock(stokData, pesananData);
-    const matchingItems = findMatchingItems(keyword, calculated);
+    log(`Calculated data: ${calculated ? calculated.length : 'undefined'} items`, 'DEBUG');
+    let matchingItems = findMatchingItems(keyword, calculated, log);
+
+    if (!matchingItems || !Array.isArray(matchingItems)) {
+      log(`Error: matchingItems is undefined or not an array, setting to empty array`, 'ERROR');
+      matchingItems = [];
+    } else {
+      log(`Matching items before filter: ${JSON.stringify(matchingItems)}`, 'DEBUG');
+      matchingItems = matchingItems.filter(item => item && item.nama && item.nama.trim() !== '');
+      if (matchingItems.length > 0) {
+        matchingItems.sort((a, b) => {
+          const aBase = extractBaseNameAndNumber(a.nama);
+          const bBase = extractBaseNameAndNumber(b.nama);
+          if (aBase.baseName !== bBase.baseName) return aBase.baseName.localeCompare(bBase.baseName);
+          const aHasAt = a.nama.includes('@');
+          const bHasAt = b.nama.includes('@');
+          if (aHasAt !== bHasAt) return aHasAt ? -1 : 1; // @ di depan
+          return aBase.number - bBase.number; // Urut numerik
+        });
+      }
+      log(`Matching items after filter and sort: ${JSON.stringify(matchingItems.map(item => item.nama))}`, 'DEBUG');
+    }
 
     clearInterval(animation);
 
     if (matchingItems.length === 0) {
-      log(`No items found for keyword: ${keyword}`);
-      await bot.sendMessage(chatId, `⚠️ Barang *${keyword}* tidak ditemukan`, { parse_mode: 'Markdown' });
-      await retry(() => bot.deleteMessage(chatId, processingMessage.message_id)).catch(err => {
-        log(`Failed to delete message: ${err.message}`, 'WARN');
-      });
+      if (!keyword) {
+        await bot.sendMessage(chatId, '⚠️ Perintah */s* memerlukan nama barang. Contoh: */s mizu d*', { parse_mode: 'Markdown' });
+      } else if (keyword.length > 0) {
+        await bot.sendMessage(chatId, `⚠️ Barang *${keyword}* tidak ditemukan. Pastikan penulisan benar atau coba kata kunci lain seperti */s mizu d*.`, { parse_mode: 'Markdown' });
+      }
+      if (processingMessage) {
+        await retry(() => bot.deleteMessage(chatId, processingMessage.message_id)).catch(err => {
+          log(`Failed to delete message: ${err.message}`, 'WARN');
+        });
+      }
       return;
     }
 
     const { text, reply_markup } = formatMessage(matchingItems, updatedAtStok, updatedAtPesanan, 0);
     const resultMessage = await bot.sendMessage(chatId, text, { parse_mode: 'Markdown', reply_markup });
-    await retry(() => bot.deleteMessage(chatId, processingMessage.message_id)).catch(err => {
-      log(`Failed to delete message: ${err.message}`, 'WARN');
-    });
+    if (processingMessage) {
+      await retry(() => bot.deleteMessage(chatId, processingMessage.message_id)).catch(err => {
+        log(`Failed to delete message: ${err.message}`, 'WARN');
+      });
+    }
 
     const sessionKey = `${chatId}_${resultMessage.message_id}`;
     searchSessions[sessionKey] = { keyword, items: matchingItems, updatedAtStok, updatedAtPesanan };
@@ -239,13 +276,26 @@ bot.onText(/\/s (.+)/i, async (msg, match) => {
       log(`Sesi ${sessionKey} dihapus`);
     }, 900000);
   } catch (err) {
-    log(`Error processing /s: ${err.message}`, 'ERROR');
+    log(`Error processing /s: ${err.stack}`, 'STACKTRACE');
     await bot.sendMessage(chatId, '⚠️ Terjadi kesalahan saat mengambil data.', { parse_mode: 'Markdown' });
     if (processingMessage) {
       await retry(() => bot.deleteMessage(chatId, processingMessage.message_id)).catch(err => {
         log(`Failed to delete message: ${err.message}`, 'WARN');
       });
     }
+  }
+});
+
+// Handler untuk pesan nggak dikenali
+bot.on('message', (msg) => {
+  const chatId = msg.chat.id;
+  const text = msg.text?.toLowerCase().trim();
+  const validCommands = ['/s', '/start', '/bantuan'];
+
+  // Cek kalau bukan command yang valid
+  if (text && (!text.startsWith('/') || (text.startsWith('/') && !validCommands.some(cmd => text.startsWith(cmd))))) {
+    bot.sendMessage(chatId, '⚠️ Command tidak dikenali. Coba perintah seperti */s <nama barang>*, */start*, atau */bantuan*.', { parse_mode: 'Markdown' });
+    log(`Unknown command or text received: ${text} from user ${msg.from.id}`);
   }
 });
 
@@ -275,7 +325,7 @@ bot.on('callback_query', async (query) => {
     });
     await bot.answerCallbackQuery(query.id);
   } catch (err) {
-    log(`Error handling callback: ${err.message}`, 'ERROR');
+    log(`Error handling callback: ${err.stack}`, 'ERROR');
     await bot.sendMessage(chatId, '⚠️ Terjadi kesalahan saat mengubah halaman.', { parse_mode: 'Markdown' });
     await bot.answerCallbackQuery(query.id);
   }
@@ -300,7 +350,7 @@ bot.onText(/\/start/, (msg) => {
 👋 Selamat Datang di Bot Cek Stok ${credential.charAt(0).toUpperCase() + credential.slice(1)}!  
 *📌 Apa yang Bisa Dilakukan:*  
   - Cek stok barang cepat dengan */s <nama barang>*  
-    (Contoh: /s jaya abu)  
+    (Contoh: /s mizu d)  
   - Butuh panduan? Ketik */bantuan*  
 *📥 Untuk Admin:*  
   - Update data via file Excel dengan caption:  
@@ -326,7 +376,7 @@ bot.onText(/\/bantuan/, async (msg) => {
 📚 *Panduan Bot Cek Stok ${credential.charAt(0).toUpperCase() + credential.slice(1)}*  
 *🔍 Cara Pakai:*  
   - Gunakan: */s <nama barang>*  
-    (Contoh: /s jaya abu)  
+    (Contoh: /s mizu d)  
   - Tombol "Berikutnya" aktif 15 menit  
   - Kadaluarsa? Coba lagi dengan */s*  
 *📥 Untuk Admin:*  

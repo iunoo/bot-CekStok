@@ -1,4 +1,4 @@
-const itemsPerPage = 5;
+const itemsPerPage = 5; // Deklarasi itemsPerPage
 
 function formatMessage(items, updatedAtStok, updatedAtPesanan, page = 0) {
   const start = page * itemsPerPage;
@@ -8,18 +8,18 @@ function formatMessage(items, updatedAtStok, updatedAtPesanan, page = 0) {
   let text = '';
   for (const item of pageItems) {
     text += `📦 *${item.nama}*\n`;                    // Nama barang
-    text += `  📍 Gudang: ${item.gudang}\n`;        // Indentasi 2 spasi
-    text += `  💼 Stok: ${item.qty}\n`;             // Indentasi 2 spasi
+    text += `📍 Gudang: ${item.gudang}\n`;          // Tanpa indentasi
+    text += `🛒 Stok: ${item.qty}\n`;               // Tanpa indentasi
     if (item.pesanan.length > 0) {
-      text += `  📝 Pesanan:\n`;                    // Indentasi 2 spasi
+      text += `📝 Pesanan:\n`;                      // Tanpa indentasi
       for (const p of item.pesanan) {
         if (p.qty > 0) {
-          text += `    • *${p.pelanggan}* - ${p.qty}\n`; // Indentasi 4 spasi
+          text += `• *${p.pelanggan}* - ${p.qty}\n`; // Tanpa indentasi 4 spasi
         }
       }
     }
-    text += `  ${item.ready === 0 ? '⚠️' : '✅'} *Stok Ready: ${item.ready}*\n`; // Indentasi 2 spasi
-    text += `----------------------------------------\n`; // Pemisah horizontal
+    text += `${item.ready === 0 ? '⚠️' : '✅'} *Stok Ready: ${item.ready}*\n`; // Tanpa indentasi
+    text += `----------------------------------------\n`; // Pemisah
   }
 
   // Format timestamp dengan validasi dan bold untuk tanggal+jam
@@ -27,9 +27,9 @@ function formatMessage(items, updatedAtStok, updatedAtPesanan, page = 0) {
   const pesananTime = updatedAtPesanan || 'Belum ada update';
   const stokTimeFormatted = stokTime === 'Belum ada update' ? stokTime : `*${stokTime}*`;
   const pesananTimeFormatted = pesananTime === 'Belum ada update' ? pesananTime : `*${pesananTime}*`;
-  text += `\n📅 *Update Terakhir:*\n`;              // Judul bold
-  text += `  🕓 ${stokTimeFormatted} (Stok)\n`;    // Indentasi 2 spasi
-  text += `  🕓 ${pesananTimeFormatted} (Pesanan Belum Diproses)\n`; // Indentasi 2 spasi
+  text += `\n📅 *Update Terakhir:*\n`;              // Tanpa indentasi
+  text += `🕓 ${stokTimeFormatted} (Stok)\n`;      // Tanpa indentasi
+  text += `🕓 ${pesananTimeFormatted} (Pesanan Belum Diproses)\n`; // Tanpa indentasi
   text += `📄 Halaman ${page + 1} dari ${Math.ceil(items.length / itemsPerPage)}`;
 
   const keyboard = [];

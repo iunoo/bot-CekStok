@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "dotenv": "^16.4.5",
+    "fast-levenshtein": "^3.0.0",
     "googleapis": "^144.0.0",
     "node-telegram-bot-api": "^0.66.0",
     "xlsx": "^0.18.5"
