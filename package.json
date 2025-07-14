@@ -4,13 +4,21 @@
   "description": "Telegram bot to check stock from Google Sheets",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "dependencies": {
     "dotenv": "^16.4.5",
     "fast-levenshtein": "^3.0.0",
     "googleapis": "^144.0.0",
     "node-telegram-bot-api": "^0.66.0",
-    "xlsx": "^0.18.5"
+    "xlsx": "^0.18.5",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
   }
 }

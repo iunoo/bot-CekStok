@@ -1,33 +1,43 @@
-function findMatchingItems(keyword, data, log) {
+const Logger = require('./logger');
+
+function findMatchingItems(keyword, data, legacyLog) {
+  // Support for legacy log parameter (backward compatibility)
+  const log = legacyLog || Logger;
+  
   const matches = [];
   const lowerKeyword = keyword.toLowerCase().trim();
-  log(`Finding matches for keyword: "${keyword}", data length: ${data ? data.length : 'undefined'}`, 'DEBUG');
+  
+  log.debug(`Finding matches for keyword: "${keyword}", data length: ${data ? data.length : 'undefined'}`);
 
   if (!data || !Array.isArray(data) || !lowerKeyword) {
-    log(`Error: Data invalid or keyword empty, returning empty array`, 'WARN');
+    log.warn('Data invalid or keyword empty, returning empty array');
     return matches;
   }
 
   for (const item of data) {
     if (!item || typeof item !== 'object') {
-      log(`Skipping invalid item: ${JSON.stringify(item)}`, 'WARN');
+      log.warn(`Skipping invalid item: ${JSON.stringify(item)}`);
       continue;
     }
+    
     const name = item.nama;
     if (!name || typeof name !== 'string') {
-      log(`Invalid name for item: ${JSON.stringify(item)}`, 'WARN');
+      log.warn(`Invalid name for item: ${JSON.stringify(item)}`);
       continue;
     }
+    
     const lowerName = name.toLowerCase();
+    
+    // Use Levenshtein distance for fuzzy matching
     const distance = require('fast-levenshtein').get(lowerName, lowerKeyword);
 
     if ((lowerName.includes(lowerKeyword) || distance < 3) && lowerKeyword.length > 0) {
       matches.push(item);
-      log(`Matched item: ${name} with distance ${distance}`, 'DEBUG');
+      log.debug(`Matched item: ${name} with distance ${distance}`);
     }
   }
 
-  log(`Found ${matches.length} matching items`, 'DEBUG');
+  log.info(`Found ${matches.length} matching items for keyword: "${keyword}"`);
   return matches;
 }
 
