@@ -45,14 +45,14 @@ async function getSheetsData() {
       }),
     ]);
 
-    // Process stok data
+    // Process stok data - simple, no unit conversion needed
     const stokData = (stokResponse.data.values || []).map(row => ({
       nama: row[5]?.trim() || '',
       gudang: row[9]?.trim() || '',
       qty: row[7]?.replace(/\D/g, '') || '0',
     })).filter(item => item.nama !== '');
 
-    // Process pesanan data
+    // Process pesanan data - simple, no unit conversion needed  
     const pesananData = (pesananResponse.data.values || []).map(row => ({
       pelanggan: row[7]?.trim() || '',
       nama: row[13]?.trim() || '',

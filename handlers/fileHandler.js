@@ -48,12 +48,12 @@ class FileHandler {
       loadingMessage = await bot.sendMessage(chatId, 'Mengupload.. ⏳', { parse_mode: 'Markdown' });
       animationInterval = this.startUploadAnimation(bot, chatId, loadingMessage);
 
-      // Process file based on caption
+      // Process file based on caption - INI YANG DIPERBAIKI!
       if (caption === '/sheet1') {
-        Logger.info('Processing file upload for Sheet1');
+        Logger.info('Processing file upload for Sheet1 (STOK)');
         await updateSheetFromFile(bot, msg, 'Sheet1');
       } else if (caption === '/sheet2') {
-        Logger.info('Processing file upload for Sheet2');
+        Logger.info('Processing file upload for Sheet2 (PESANAN)');
         await updateSheet2FromFile(bot, msg);
       }
 

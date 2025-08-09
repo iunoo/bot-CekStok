@@ -3,7 +3,12 @@ function calculateReadyStock(stokData, pesananData) {
 
   for (const stok of stokData) {
     const totalPesanan = pesananData
-      .filter(p => p.nama.toLowerCase().includes(stok.nama.toLowerCase()))
+      .filter(p => {
+        // EXACT MATCH ONLY - nama harus persis sama
+        const pesananNama = p.nama.trim();
+        const stokNama = stok.nama.trim();
+        return pesananNama === stokNama;
+      })
       .map(p => ({
         pelanggan: p.pelanggan,
         qty: parseInt(p.qty || '0', 10) || 0

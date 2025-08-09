@@ -12,22 +12,6 @@ const auth = new google.auth.GoogleAuth({
 const sheets = google.sheets({ version: 'v4', auth });
 const SPREADSHEET_ID = config.google.spreadsheetId;
 
-// Fungsi konversi serial date Excel ke format DD/MM/YYYY (adjust bug 1900)
-function excelSerialToDate(serial) {
-  if (typeof serial !== 'number' || isNaN(serial)) {
-    // Kalau bukan angka, anggap udah string tanggal (misal, "08/05/25")
-    return serial?.toString().trim() || '';
-  }
-  
-  const excelEpoch = new Date('1900-01-01'); // Adjust buat bug Excel 1900
-  const date = new Date(excelEpoch.getTime() + (serial - 2) * 24 * 60 * 60 * 1000); // -2 buat kompensasi
-  const day = String(date.getDate()).padStart(2, '0');
-  const month = String(date.getMonth() + 1).padStart(2, '0'); // +1 karena Januari = 0
-  const year = date.getFullYear();
-  
-  return `${day}/${month}/${year}`;
-}
-
 // Fungsi parsing data dari Excel
 function parseExcelData(buffer) {
   const workbook = XLSX.read(buffer, { type: 'buffer' });
@@ -45,110 +29,87 @@ function parseExcelData(buffer) {
   const headerRow = rawData[0];
   const dataRows = rawData.slice(1);
   
-  Logger.info(`Excel parsed for Sheet2 - Header: ${JSON.stringify(headerRow)}`);
+  Logger.info(`Excel parsed - Header: ${JSON.stringify(headerRow)}`);
   Logger.debug(`Data rows count: ${dataRows.length}`);
 
   return { headerRow, dataRows };
 }
 
-// Fungsi mapping data ke format Spreadsheet untuk Sheet2
-function mapToSheet2Data(dataRows, headerRow) {
-  // Validasi header untuk Sheet2
-  const requiredHeaders = ['Wilayah', 'Kota', 'No. Pelanggan', 'Nama Pelanggan', 'Kategori Barang', 'Kode Barang', 'Nama Barang', 'Qty', 'Satuan', 'Total Harga', 'Nomor PO', 'Tgl. Pesan'];
-  const foundHeaders = requiredHeaders.filter(header => headerRow.includes(header));
+// Fungsi untuk mencari index kolom dengan nama yang fleksibel
+function findColumnIndex(headerRow, possibleNames) {
+  for (const name of possibleNames) {
+    const index = headerRow.findIndex(header => 
+      header && header.toString().toLowerCase().includes(name.toLowerCase())
+    );
+    if (index >= 0) return index;
+  }
+  return -1;
+}
+
+// Fungsi mapping data ke format Spreadsheet untuk Sheet1 (STOK)
+function mapToSheet1Data(dataRows, headerRow) {
+  Logger.info('Mapping data for Sheet1 (STOK)');
   
-  if (foundHeaders.length !== requiredHeaders.length) {
-    const missingHeaders = requiredHeaders.filter(h => !foundHeaders.includes(h));
-    throw new Error(`Format file tidak sesuai untuk Sheet2. Header yang hilang: ${missingHeaders.join(', ')}`);
+  // Cari index kolom dengan nama yang fleksibel
+  const kategoriIndex = findColumnIndex(headerRow, ['kategori', 'category', 'jenis']);
+  const kodeIndex = findColumnIndex(headerRow, ['kode', 'code', 'sku', 'barcode']);
+  const nameIndex = findColumnIndex(headerRow, ['nama', 'name', 'barang', 'produk', 'item']);
+  const qtyIndex = findColumnIndex(headerRow, ['qty', 'kuantitas', 'quantity', 'stok', 'stock', 'jumlah']);
+  const gudangIndex = findColumnIndex(headerRow, ['gudang', 'warehouse', 'lokasi', 'location']);
+
+  Logger.info(`Column mapping - Kategori: ${kategoriIndex}, Kode: ${kodeIndex}, Nama: ${nameIndex}, Qty: ${qtyIndex}, Gudang: ${gudangIndex}`);
+
+  // Validasi minimal: harus ada nama dan qty
+  if (nameIndex < 0) {
+    throw new Error('Kolom nama barang tidak ditemukan. Pastikan ada kolom dengan nama seperti: "Nama", "Nama Barang", "Produk", atau "Item"');
+  }
+  
+  if (qtyIndex < 0) {
+    throw new Error('Kolom quantity tidak ditemukan. Pastikan ada kolom dengan nama seperti: "Qty", "Kuantitas", "Quantity", "Stok", atau "Jumlah"');
   }
 
   const data = dataRows.map((row, index) => {
-    if (!Array.isArray(row) || row.length < 24) { // Minimal 24 kolom (0-23)
+    if (!Array.isArray(row) || row.length < 2) {
       Logger.warn(`Row ${index + 2} skipped due to invalid format: ${JSON.stringify(row)}`);
       return null;
     }
     
-    const wilayahIndex = headerRow.indexOf('Wilayah');
-    const kotaIndex = headerRow.indexOf('Kota');
-    const noPelangganIndex = headerRow.indexOf('No. Pelanggan');
-    const namaPelangganIndex = headerRow.indexOf('Nama Pelanggan');
-    const kategoriIndex = headerRow.indexOf('Kategori Barang');
-    const kodeIndex = headerRow.indexOf('Kode Barang');
-    const nameIndex = headerRow.indexOf('Nama Barang');
-    const qtyIndex = headerRow.indexOf('Qty');
-    const satuanIndex = headerRow.indexOf('Satuan');
-    const totalHargaIndex = headerRow.indexOf('Total Harga');
-    const nomorPOIndex = headerRow.indexOf('Nomor PO');
-    const tglPesanIndex = headerRow.indexOf('Tgl. Pesan');
-    
-    if ([wilayahIndex, kotaIndex, noPelangganIndex, namaPelangganIndex, kategoriIndex, kodeIndex, nameIndex, qtyIndex, satuanIndex, totalHargaIndex, nomorPOIndex, tglPesanIndex].some(idx => idx < 0)) {
-      Logger.warn(`Invalid indices for row ${index + 2}: ${JSON.stringify(row)}`);
-      return null;
-    }
-    
-    const wilayah = row[wilayahIndex]?.toString().trim() || '';
-    const kota = row[kotaIndex]?.toString().trim() || '';
-    const noPelanggan = row[noPelangganIndex]?.toString().trim() || '';
-    const namaPelanggan = row[namaPelangganIndex]?.toString().trim() || '';
-    const kategori = row[kategoriIndex]?.toString().trim() || '';
-    const kode = row[kodeIndex]?.toString().trim() || '';
-    const nama = row[nameIndex]?.toString().trim() || 'Unnamed Item';
+    const kategori = kategoriIndex >= 0 ? (row[kategoriIndex]?.toString().trim() || '') : '';
+    const kode = kodeIndex >= 0 ? (row[kodeIndex]?.toString().trim() || '') : '';
+    const nama = row[nameIndex]?.toString().trim() || '';
     const qty = row[qtyIndex] ? row[qtyIndex].toString().replace(/\D/g, '') || '0' : '0';
-    const satuan = row[satuanIndex]?.toString().trim() || '';
-    const totalHargaRaw = row[totalHargaIndex];
-    const totalHarga = totalHargaRaw !== undefined && totalHargaRaw !== null 
-      ? totalHargaRaw.toString().trim() || '0' 
-      : '0';
-    const nomorPO = row[nomorPOIndex]?.toString().trim() || '';
-    const tglPesanRaw = row[tglPesanIndex];
-    const tglPesan = tglPesanRaw !== undefined && tglPesanRaw !== null 
-      ? excelSerialToDate(tglPesanRaw) 
-      : '';
+    const gudang = gudangIndex >= 0 ? (row[gudangIndex]?.toString().trim() || 'Main') : 'Main';
     
-    Logger.debug(`Row ${index + 2} - tglPesan: ${tglPesanRaw} (${typeof tglPesanRaw}) -> ${tglPesan}`);
-    
-    if (!nama || nama === 'Unnamed Item') {
-      Logger.warn(`Row ${index + 2} skipped due to invalid name: ${JSON.stringify(row)}`);
+    if (!nama) {
+      Logger.warn(`Row ${index + 2} skipped due to empty name: ${JSON.stringify(row)}`);
       return null;
     }
     
-    return { wilayah, kota, noPelanggan, namaPelanggan, kategori, kode, nama, qty, satuan, totalHarga, nomorPO, tglPesan };
+    return { kategori, kode, nama, gudang, qty };
   }).filter(item => item !== null);
 
-  Logger.info(`Processed ${data.length} valid items from ${dataRows.length} rows for Sheet2`);
+  Logger.info(`Processed ${data.length} valid items from ${dataRows.length} rows for Sheet1`);
 
-  // Mapping ke 24 kolom untuk Sheet2!A2:X dengan offset
+  // Mapping ke 12 kolom untuk Sheet1!A2:L dengan offset
   const paddedData = data.map(item => [
     '',              // Kolom A (kosong)
-    item.wilayah,    // Kolom B
+    item.kategori,   // Kolom B
     '',              // Kolom C
-    item.kota,       // Kolom D
+    item.kode,       // Kolom D
     '',              // Kolom E
-    item.noPelanggan,// Kolom F
+    item.nama,       // Kolom F
     '',              // Kolom G
-    item.namaPelanggan, // Kolom H
+    item.qty,        // Kolom H
     '',              // Kolom I
-    item.kategori,   // Kolom J
+    item.gudang,     // Kolom J
     '',              // Kolom K
-    item.kode,       // Kolom L
-    '',              // Kolom M
-    item.nama,       // Kolom N
-    '',              // Kolom O
-    item.qty,        // Kolom P
-    '',              // Kolom Q
-    item.satuan,     // Kolom R
-    '',              // Kolom S
-    item.totalHarga, // Kolom T
-    '',              // Kolom U
-    item.nomorPO,    // Kolom V
-    '',              // Kolom W
-    item.tglPesan,   // Kolom X
+    '',              // Kolom L
   ]);
 
   return paddedData;
 }
 
-async function updateSheet2FromFile(bot, msg) {
+async function updateSheetFromFile(bot, msg, sheetName = 'Sheet1') {
   const chatId = msg.chat.id;
   const userId = msg.from.id;
 
@@ -161,7 +122,7 @@ async function updateSheet2FromFile(bot, msg) {
   }
 
   const fileId = msg.document.file_id;
-  Logger.info(`Processing file upload: ${fileId} for Sheet2`);
+  Logger.info(`Processing file upload: ${fileId} for ${sheetName} (STOK)`);
 
   try {
     // Get file from Telegram
@@ -181,7 +142,7 @@ async function updateSheet2FromFile(bot, msg) {
     const { headerRow, dataRows } = parseExcelData(buffer);
     
     // Map to sheet format
-    const paddedData = mapToSheet2Data(dataRows, headerRow);
+    const paddedData = mapToSheet1Data(dataRows, headerRow);
 
     if (paddedData.length === 0) {
       throw new Error('No valid data found in the file after processing.');
@@ -190,12 +151,12 @@ async function updateSheet2FromFile(bot, msg) {
     // Clear existing data
     const existingData = await sheets.spreadsheets.values.get({
       spreadsheetId: SPREADSHEET_ID,
-      range: 'Sheet2!A2:X',
+      range: 'Sheet1!A2:L',
     });
     
     const rowCount = existingData.data.values?.length || 0;
     if (rowCount > 0) {
-      const clearRange = `Sheet2!A2:X${rowCount + 1}`;
+      const clearRange = `Sheet1!A2:L${rowCount + 1}`;
       await sheets.spreadsheets.values.clear({
         spreadsheetId: SPREADSHEET_ID,
         range: clearRange,
@@ -206,7 +167,7 @@ async function updateSheet2FromFile(bot, msg) {
     // Update with new data
     const startRow = 2;
     const endRow = startRow + paddedData.length - 1;
-    const range = `Sheet2!A${startRow}:X${endRow}`;
+    const range = `Sheet1!A${startRow}:L${endRow}`;
     
     await sheets.spreadsheets.values.update({
       spreadsheetId: SPREADSHEET_ID,
@@ -229,24 +190,24 @@ async function updateSheet2FromFile(bot, msg) {
     
     await sheets.spreadsheets.values.update({
       spreadsheetId: SPREADSHEET_ID,
-      range: 'Sheet2!Y1',
+      range: 'Sheet1!L1',
       valueInputOption: 'RAW',
       resource: { values: [[now]] },
     });
 
-    Logger.info(`Sheet2 updated successfully at ${now} with ${paddedData.length} rows`);
+    Logger.info(`${sheetName} (STOK) updated successfully at ${now} with ${paddedData.length} rows`);
     await bot.sendMessage(chatId, 
-      `✅ Data di Sheet2 berhasil diperbarui pada ${now}. Total baris: ${paddedData.length}.`, 
+      `✅ Data STOK di ${sheetName} berhasil diperbarui pada ${now}. Total baris: ${paddedData.length}.`, 
       { parse_mode: 'Markdown' }
     );
 
   } catch (error) {
-    Logger.error(`Error updating Sheet2: ${error.stack}`);
+    Logger.error(`Error updating ${sheetName} (STOK): ${error.stack}`);
     await bot.sendMessage(chatId, 
-      `⚠️ Gagal memperbarui data. Pastikan format file dan caption (/sheet2) sesuai. Error: ${error.message}`, 
+      `⚠️ Gagal memperbarui data STOK. Error: ${error.message}`, 
       { parse_mode: 'Markdown' }
     );
   }
 }
 
-module.exports = updateSheet2FromFile;
+module.exports = updateSheetFromFile;
