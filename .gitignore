@@ -26,3 +26,7 @@ verified-users.json
 # Ignore temporary files
 *.tmp
 *.temp
+
+.claude/settings.local.json
+bot-log.txt
+samples/
